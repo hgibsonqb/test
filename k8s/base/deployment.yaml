@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test3
+spec:
+  template:
+    spec:
+      containers:
+        - envFrom:
+          - configMapRef:
+              name: test3
+          image: test
+          name: test
+          ports:
+          - containerPort: 5000
+            name: test
